@@ -163,7 +163,7 @@ class Scalar:
         assert h.last_fn is not None
         assert h.ctx is not None
 
-        d = h.last_fn.backward(h.ctx, d_output)
+        d = h.last_fn._backward(h.ctx, d_output)
         x = self.parents
         return filter(lambda pair: not pair[0].is_constant(), zip(x, d))
 
