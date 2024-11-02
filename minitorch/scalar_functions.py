@@ -189,8 +189,7 @@ class LT(ScalarFunction):
 
     @staticmethod
     def backward(ctx: Context, d_output: float) -> Tuple[float, float]:
-        # TODO: Implement for Task 1.4.
-        raise NotImplementedError("Need to implement for Task 1.4")
+        return 0, 0
 
 
 class EQ(ScalarFunction):
@@ -202,5 +201,4 @@ class EQ(ScalarFunction):
 
     @staticmethod
     def backward(ctx: Context, d_output: float) -> Tuple[float, float]:
-        # TODO: Implement for Task 1.4.
-        raise NotImplementedError("Need to implement for Task 1.4")
+        return 0, 0
