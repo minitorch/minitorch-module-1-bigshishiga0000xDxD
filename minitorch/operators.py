@@ -111,8 +111,12 @@ def inv_back(x: float, d: float) -> float:
 
 def relu_back(x: float, d: float) -> float:
     r"If $f = relu$ compute $d \times f'(x)$"
-    return d * (x > 0)
+    return d * lt(0, x)
 
+
+def sigmoid_back(x: float, d: float) -> float:
+    r"If $f = sigmoid$ compute $d \times f'(x)$"
+    return sigmoid(x) * (1 - sigmoid(x)) * d
 
 # ## Task 0.3
 
