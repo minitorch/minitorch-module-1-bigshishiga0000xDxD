@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Iterable, List, Tuple
+from typing import Any, Iterable, Tuple
 
 from typing_extensions import Protocol
 
@@ -27,6 +27,7 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
     rx[arg] += epsilon
     ly, ry = f(*lx), f(*rx)
     return (ry - ly) / (2 * epsilon)
+
 
 variable_count = 1
 
@@ -71,6 +72,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
             result += topological_sort(parent)
         result += [variable]
         return result
+
 
 def backpropagate(variable: Variable, deriv: Any) -> None:
     """
