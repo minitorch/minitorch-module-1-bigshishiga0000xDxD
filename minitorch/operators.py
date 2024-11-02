@@ -12,22 +12,22 @@ from typing import Callable, Iterable
 
 def mul(x: float, y: float) -> float:
     "$f(x, y) = x * y$"
-    return x * y
+    return float(x * y)
 
 
 def id(x: float) -> float:
     "$f(x) = x$"
-    return x
+    return float(x)
 
 
 def add(x: float, y: float) -> float:
     "$f(x, y) = x + y$"
-    return x + y
+    return float(x + y)
 
 
 def neg(x: float) -> float:
     "$f(x) = -x$"
-    return -x
+    return float(-x)
 
 
 def lt(x: float, y: float) -> float:
@@ -43,14 +43,14 @@ def eq(x: float, y: float) -> float:
 def max(x: float, y: float) -> float:
     "$f(x) =$ x if x is greater than y else y"
     if x > y:
-        return x
+        return float(x)
     else:
-        return y
+        return float(y)
 
 
 def is_close(x: float, y: float) -> float:
     "$f(x) = |x - y| < 1e-2$"
-    return abs(x - y) < 1e-2
+    return float(abs(x - y) < 1e-2)
 
 
 def sigmoid(x: float) -> float:
